@@ -1,22 +1,11 @@
-import { useState } from "react";
+import React from "react";
 
-function Calculation(props: { operation: string }) {
-    const [name, setName] = useState("0");
-
-    const handleSubmit = (event: { preventDefault: () => void }) => {
-      event.preventDefault();
-    };
-  return <>
-  <form onSubmit={handleSubmit}>
-    <input
-      className="operation"
-      type="text"
-      value={props.operation}
-      onChange={(e) => setName(e.target.value)}
-    ></input>
-  </form>
-</>
-  
+function Calculation(props: { i: any }) {
+  return (
+    <>
+        <input type="text" value={props.i.toString()} readOnly></input>
+    </>
+  );
 }
 
 export default Calculation;
