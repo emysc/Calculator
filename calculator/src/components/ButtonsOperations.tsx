@@ -1,16 +1,15 @@
 import { useState } from "react";
 
-function ButtonsOperations(props: { operation: string; aoclicar: any }) {
+function ButtonsOperations(props: { operation: string; clickButton: any }) {
   return (
     <>
       <button
         className="operation"
         type="submit"
         value={props.operation}
-        onClick={(e) => props.aoclicar(props.operation, e)}
+        onClick={(e) => props.clickButton(props.operation, e)}
       >
         {props.operation}
-        {/* // onClick={(e) => props.aoclicar(props.operation,e)}> */}
       </button>
     </>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 
-function Calculation(props: { i: any }) {
+function Calculation(props: { screenValue: any }) {
   return (
     <>
-        <input type="text" value={props.i.toString()} readOnly></input>
+        <input type="text" value={props.screenValue.toString()} readOnly></input>
     </>
   );
 }
