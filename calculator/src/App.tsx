@@ -1,41 +1,47 @@
+import { create, all } from "mathjs";
 import { useState } from "react";
 import ButtonsOperations from "./components/ButtonsOperations";
 import Calculation from "./components/Calculation";
 import "./App.css";
 
-function App() {
-  const [name, setName] = useState<string>("");
+const math = create(all);
 
-  function receber(x: any, y: string) {
+function App() {
+  const [value, setValue] = useState<string>("");
+
+  function amountReceived(x: any, y: string) {
     if (x === "=") {
-      setName(Number(name).toString());
+      setValue(math.evaluate(value));
     } else {
-      setName(name + x);
+      setValue(value + x);
+    }
+    if (x === "c") {
+      setValue("");
     }
   }
 
   return (
     <div className="container">
-      <Calculation i={name} />
+      <Calculation screenValue={value} />
       <div className="numbers_container">
-        <ButtonsOperations operation="1" aoclicar={receber} />
-        <ButtonsOperations operation="2" aoclicar={receber} />
-        <ButtonsOperations operation="3" aoclicar={receber} />
-        <ButtonsOperations operation="4" aoclicar={receber} />
-        <ButtonsOperations operation="5" aoclicar={receber} />
-        <ButtonsOperations operation="6" aoclicar={receber} />
-        <ButtonsOperations operation="7" aoclicar={receber} />
-        <ButtonsOperations operation="8" aoclicar={receber} />
-        <ButtonsOperations operation="9" aoclicar={receber} />
-        <ButtonsOperations operation="0" aoclicar={receber} />
+        <ButtonsOperations operation="1" clickButton={amountReceived} />
+        <ButtonsOperations operation="2" clickButton={amountReceived} />
+        <ButtonsOperations operation="3" clickButton={amountReceived} />
+        <ButtonsOperations operation="4" clickButton={amountReceived} />
+        <ButtonsOperations operation="5" clickButton={amountReceived} />
+        <ButtonsOperations operation="6" clickButton={amountReceived} />
+        <ButtonsOperations operation="7" clickButton={amountReceived} />
+        <ButtonsOperations operation="8" clickButton={amountReceived} />
+        <ButtonsOperations operation="9" clickButton={amountReceived} />
+        <ButtonsOperations operation="0" clickButton={amountReceived} />
       </div>
       <div className="ops_container">
-        <ButtonsOperations operation="c" aoclicar={receber} />
-        <ButtonsOperations operation="*" aoclicar={receber} />
-        <ButtonsOperations operation="-" aoclicar={receber} />
-        <ButtonsOperations operation="/" aoclicar={receber} />
-        <ButtonsOperations operation="+" aoclicar={receber} />
-        <ButtonsOperations operation="=" aoclicar={receber} />
+        <ButtonsOperations operation="c" clickButton={amountReceived} />
+        <ButtonsOperations operation="*" clickButton={amountReceived} />
+        <ButtonsOperations operation="-" clickButton={amountReceived} />
+        <ButtonsOperations operation="/" clickButton={amountReceived} />
+        <ButtonsOperations operation="+" clickButton={amountReceived} />
+        <ButtonsOperations operation="=" clickButton={amountReceived} />
       </div>
     </div>
   );
