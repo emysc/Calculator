@@ -1,0 +1,13 @@
+.output {
+  width: 100%;
+  height: auto;
+}
+
+.output input {
+  width: 100%;
+  height: 5em;
+  font-family: "Courier New", Courier, monospace;
+  font-size: larger;
+  font-weight: bold;
+  color: black;
+}

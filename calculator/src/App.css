@@ -1,0 +1,29 @@
+html {
+    background-color: #783434;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 500px;
+  background-color: #ffffff24;
+  box-shadow: 12px 13px 22px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 12px 13px 22px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 13px 22px -7px rgba(0, 0, 0, 0.75);
+}
+
+.numbers_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.ops_container {
+  width: 25%;
+  height: auto;
+  margin-top: 1rem;
+}
