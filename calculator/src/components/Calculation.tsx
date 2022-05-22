@@ -1,9 +1,11 @@
-import './Calculation.css';
-
-function Calculation(props: { screenValue: any }) {
+function Calculation(props: { screenValue: any; parcialResult: string }) {
   return (
     <div className="output">
-      <input type="text" value={props.screenValue.toString()} readOnly></input>
+      <span>
+        {props.parcialResult ? "(" + props.parcialResult + ")" : ""}
+        &nbsp;
+        {props.screenValue.toString() || "0"}
+      </span>
     </div>
   );
 }
